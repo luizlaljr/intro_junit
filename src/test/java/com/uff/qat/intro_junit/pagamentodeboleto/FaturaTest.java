@@ -44,6 +44,21 @@ public class FaturaTest {
         assertEquals("Diane", f.getNome());
     }
     
+    @DisplayName("Teste do método para obter a data")
+    @Test
+    public void testGetData(){
+        String data = f.getData();
+        assertEquals("10/10/2020", data);
+    }
+    
+    @DisplayName("Teste do método para definir a data")
+    @Test
+    public void testSetData(){
+        String data = "20/10/2020";
+        f.setData(data);
+        assertEquals("20/10/2020", f.getData());
+    }
+    
     @AfterEach
     public void tearDown() {
         f = null;
