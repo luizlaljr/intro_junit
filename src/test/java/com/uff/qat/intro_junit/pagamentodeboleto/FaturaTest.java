@@ -26,7 +26,7 @@ public class FaturaTest {
     
     @BeforeEach
     public void setUp() { 
-        f = new Fatura("Luiz",2020/10/10,1000.0);
+        f = new Fatura("Luiz","10/10/2020",1000.0);
     }
     
     @DisplayName("Teste do método para obter o nome")
@@ -34,6 +34,14 @@ public class FaturaTest {
     public void testGetNome(){
         String nome = f.getNome();
         assertEquals("Luiz", nome);
+    }
+    
+    @DisplayName("Teste do método para definir o nome")
+    @Test
+    public void testSetNome(){
+        String nome = "Diane";
+        f.setNome(nome);
+        assertEquals("Diane", f.getNome());
     }
     
     @AfterEach
