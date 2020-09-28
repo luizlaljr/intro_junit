@@ -59,6 +59,21 @@ public class FaturaTest {
         assertEquals("20/10/2020", f.getData());
     }
     
+    @DisplayName("Teste do método para obter o total")
+    @Test
+    public void testGetTotal(){
+        double total = f.getTotal();
+        assertEquals(1000.0, total);
+    }
+    
+    @DisplayName("Teste do método para definir o total")
+    @Test
+    public void testSetTotal(){
+        double total = 1500.0;
+        f.setTotal(total);
+        assertEquals(1500.0, f.getTotal());
+    }
+    
     @AfterEach
     public void tearDown() {
         f = null;
