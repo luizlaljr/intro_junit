@@ -22,7 +22,6 @@ public class FaturaTest {
     @BeforeEach
     public void setUp() { 
         f = new Fatura("Luiz", 1000.0, "10/10/2020");
-        System.out.println("Falhou");
     }
     
     @DisplayName("Teste do método para obter o nome")
