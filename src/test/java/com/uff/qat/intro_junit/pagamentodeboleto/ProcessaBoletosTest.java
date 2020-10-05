@@ -31,7 +31,7 @@ public class ProcessaBoletosTest {
         boletos.add(b1);
         Boleto b2 = new Boleto(123426,"10/11/2020",400.0);
         boletos.add(b2);
-        Boleto b3 = new Boleto(123427,"10/12/2020",200.0);
+        Boleto b3 = new Boleto(123427,"10/12/2020",50.0);
         boletos.add(b3);
         pb = new ProcessaBoletos(f,boletos);
     }
@@ -63,6 +63,23 @@ public class ProcessaBoletosTest {
     @Test
     public void testGetBoletos(){
         assertArrayEquals(boletos, pb.getBoletos);
+    }
+    
+    @DisplayName("Teste do método para processar o pagamento da fatura ainda não paga")
+    @Test
+    public void testProcessarPagamentoFalso(){
+        boolean estaPaga = pb.processarPagamento();
+        assertFalse(estaPaga);
+    }
+    
+    @DisplayName("Teste do método para processar o pagamento da fatura paga")
+    @Test
+    public void testProcessarPagamentoVerdadeiro(){
+        Boleto b = new Boleto(123428,"10/12/2020",50.0);
+        boletos.add(b);
+        pb.setBoletos(boletos);
+        boolean estaPaga = pb.processarPagamento();
+        assertTrue(estaPaga);
     }
     
     @AfterEach
