@@ -41,13 +41,13 @@ public class ProcessaBoletosTest {
     public void testSetFatura(){
         f = new Fatura("Diane", 500.0, "10/11/2020");
         pb.setFatura(f);
-        assertEquals(f, pb.getFatura);
+        assertEquals(f, pb.getFatura());
     }
     
     @DisplayName("Teste do método para obter a fatura")
     @Test
     public void testGetFatura(){
-        assertArrayEquals(f, pb.getFatura);
+        assertEquals(f, pb.getFatura());
     }
     
     @DisplayName("Teste do método para definir a lista de boletos")
@@ -56,13 +56,13 @@ public class ProcessaBoletosTest {
         Boleto b = new Boleto(123428,"10/12/2020",50.0);
         boletos.add(b);
         pb.setBoletos(boletos);
-        assertArrayEquals(boletos, pb.getBoletos);
+        assertIterableEquals(boletos, pb.getBoletos());
     }
     
     @DisplayName("Teste do método para obter a lista de boletos")
     @Test
     public void testGetBoletos(){
-        assertArrayEquals(boletos, pb.getBoletos);
+        assertIterableEquals(boletos, pb.getBoletos());
     }
     
     @DisplayName("Teste do método para processar o pagamento da fatura ainda não paga")
