@@ -69,6 +69,19 @@ public class FaturaTest {
         assertEquals(1500.0, f.getTotal());
     }
     
+    @DisplayName("Teste do método para definir se está paga a fatura")
+    @Test
+    public void testSetEstaPaga(){
+        f.setEstaPaga(true);
+        assertEquals(true, f.getEstaPaga());
+    }
+    
+    @DisplayName("Teste do método para obter se está paga a fatura")
+    @Test
+    public void testGetEstaPaga(){
+        assertEquals(false, f.getEstaPaga());
+    }
+    
     @AfterEach
     public void tearDown() {
         f = null;

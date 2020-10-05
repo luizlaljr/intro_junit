@@ -14,11 +14,13 @@ public class Fatura {
     private String nome;
     private double total;
     private String data;
+    private boolean estaPaga;
     
     public Fatura(String nome, double total, String data){
         this.nome = nome;
         this.total = total;
         this.data = data;
+        this.estaPaga = false;
     }
 
     public String getNome() {
@@ -44,5 +46,14 @@ public class Fatura {
     public void setData(String data){
         this.data = data;
     }
+
+    public boolean getEstaPaga() {
+        return estaPaga;
+    }
+
+    public void setEstaPaga(boolean estaPaga) {
+        this.estaPaga = estaPaga;
+    }
+    
     
 }
