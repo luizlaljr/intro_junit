@@ -72,5 +72,4 @@ public class BoletoTest {
     public void tearDown() {
         b = null;
     }
-    
 }
