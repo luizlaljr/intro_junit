@@ -6,9 +6,7 @@
 package com.uff.qat.intro_junit.pagamentodeboleto;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
@@ -19,14 +17,12 @@ import org.junit.jupiter.api.DisplayName;
  */
 public class FaturaTest {
     
-    @BeforeAll
-    public static void inicializa() {
-        Fatura f;
-    }
+    private Fatura f;
     
     @BeforeEach
     public void setUp() { 
-        f = new Fatura("Luiz","10/10/2020",1000.0);
+        f = new Fatura("Luiz", 1000.0, "10/10/2020");
+        System.out.println("Falhou");
     }
     
     @DisplayName("Teste do método para obter o nome")
@@ -76,11 +72,6 @@ public class FaturaTest {
     
     @AfterEach
     public void tearDown() {
-        f = null;
-    }
-    
-    @AfterAll
-    public static void finaliza() {
         f = null;
     }
 
